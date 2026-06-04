@@ -92,7 +92,7 @@ if nome in login:
                     st.markdown("")
                 
                 elif status == "DAS pago":
-                    with open(f"AM Contabilidade\\{nome}\\Comprovantes\\Comprovante_DAS_{mes}_2026.pdf","rb") as file:
+                    with open(f"AM Contabilidade/{nome}/Comprovantes/Comprovante_DAS_{mes}_2026.pdf","rb") as file:
                         st.download_button(
                             f"Baixar comprovante de pagamento do DAS de {mes}",
                             file,
@@ -100,7 +100,7 @@ if nome in login:
                             mime = "application/pdf"
                         )
                 elif status3 == "Disponivel para pagamento":
-                    with open(f"AM Contabilidade\\{nome}\\DAS\\DAS_{mes}_2026.pdf","rb") as file:
+                    with open(f"AM Contabilidade/{nome}/DAS/DAS_{mes}_2026.pdf","rb") as file:
                         st.download_button(
                             f"Baixar DAS {mes}",
                             file,
@@ -116,7 +116,7 @@ if nome in login:
             st.divider()
             st.subheader(f"Nome empresarial: {nome_empresarial[nome]}")
             st.subheader(f"CNPJ: {cnpj[nome]}")
-            with open(f"AM Contabilidade\\{nome}\\Documentos\\Cartão CNPJ.pdf","rb") as file:
+            with open(f"AM Contabilidade/{nome}/Documentos/Cartão CNPJ.pdf","rb") as file:
                         st.download_button(
                             f"Baixar Cartão CNPJ",
                             file,
@@ -211,7 +211,7 @@ if nome in login:
                 st.subheader("Deseja extrair as notas fiscais de qual periodo:")
                 for mes in meses:
                     
-                    pasta = (f"AM Contabilidade\\{nome}\\NFS_{mes}_2026")
+                    pasta = (f"AM Contabilidade/{nome}/NFS_{mes}_2026")
                     def criar_zip(pasta, nome_zip):
 
                         with zipfile.ZipFile(
