@@ -67,7 +67,7 @@ if nome in login:
 
                 status = "DAS pago" if nome in DAS[mes] else f"Vencimento dia 20/{meses.index(mes)+2}/2026"
                 status2 = "Pagamento realizado" if nome in DAS[mes] else "Não disponivel para pagamento"
-                stt = "Não Conta" if indice < meses.index(entrada[nome]) else status4
+                stt = "Não Conta" if indice < meses.index(entrada[nome]) - 1 else status4
                 status3 = "Disponivel para pagamento" if mes_atual >= indice+2 else status2
                 status4 = "Pagamento em atraso" if mes_atual == indice+2 and dia_atual > 20 or mes_atual > indice+2  else status3
 
